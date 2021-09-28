@@ -1,0 +1,30 @@
+
+
+function displayDataTable(){
+    var fn = document.getElementById("Fname").value;
+    var ln = document.getElementById("Lname").value;
+    var ag = document.getElementById("age").value;
+
+    var table= document.getElementById("mytable");
+
+    if(!fn || !ln || !ag){
+        alert("Please enter the inputs..!");
+        return;
+    }
+
+    let inputs ={
+        'fname':fn,
+        'lname':ln,
+        'age':ag
+    }
+
+    const obj = JSON.parse(JSON.stringify(inputs));
+
+     var row =  "<tr><td>"+obj.fname+"</td><td>"+obj.lname+"</td><td>"+obj.age+"</td></tr>"
+        //  table.append(row);       
+   
+         document.getElementById("Fname").innerHTML="";
+         document.getElementById("Lname").innerHTML="";
+         document.getElementById("age").innerHTML="";
+        
+}
